@@ -1,0 +1,62 @@
+body {
+    background: lightgreen;
+}
+
+header {
+    font-family: 'sans-serif', Times, serif;
+    font-size: 130%;
+    text-align: center;
+
+    border: 3px solid darkgreen;
+    background-color: green;
+    color: #000;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+
+legend {
+    color: #000;
+    padding: 3% 6%;
+    font-size: 140%;
+}
+
+img {
+    width: 80%;
+}
+
+fieldset>table{
+    border-spacing: 10px;
+}
+
+.paramTable {
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.radioSel {
+    transform:scale(1.7);
+    margin-right: 4%;
+}
+
+#checkButton {
+    font-size: 160%;
+    width: 100%;
+    padding: 1% 0.5% 1% 0.5%;
+}
+#resultTable {
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px solid maroon;
+}
+#resultTable td, tr, th{
+    border: 1px solid maroon;
+}
+
+[type="text"]{
+    font-size: 130%;
+    font-style: italic;
+    width: 80%;
+    padding: 1% 1% 1% 1%;
+}
