@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="piplab3:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/piplab3_war_exploded</output-path>
-    <root id="root">
+  <artifact type="war" name="piplab3:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/piplab3_war</output-path>
+    <root id="archive" name="piplab3_war.war">
       <element id="javaee-facet-resources" facet="piplab3/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

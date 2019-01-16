@@ -1,12 +1,11 @@
 var pointsArray = [];
-var R = document.getElementById('form:rParam').value;
-var isRSet = false;
 
-window.onload = function() {
+ice.ace.instance('mainForm:paramR').valueChangeListener = function (event) {
     draw();
 }
 
-document.querySelector("canvas").addEventListener('mouseup', clickCanvas, false);
+draw();
+document.querySelector("canvas").addEventListener('click', clickCanvas, false);
 
 function addPoint(x, y, color)
 {
@@ -19,7 +18,7 @@ function draw()
     canvas.width = 600;
     canvas.height = 600;
     drawBackground(canvas);
-    drawFigure(canvas, R);
+    drawFigure(canvas, getR());
     drawPoints(canvas);
     drawAxises(canvas);
 }
@@ -110,15 +109,27 @@ function clickCanvas(event) {
     x = x*12/canvas.width-6;
     y= 6-y*12/canvas.height;
 
-    document.getElementById('form:xParam').value = x;
-    document.getElementById('form:hiddenY').value = y;
-    document.getElementById('form:checkButton').click();
+    document.getElementById('mainForm:paramX').value = x;
+    document.getElementById('mainForm:hiddenY').value = y;
+    document.getElementById('mainForm:checkButton').click();
 }
 
 function getR() {
-    let input = document.querySelector("input:checked[name='rParam']");
-    if (input) {
-        R = input.value;
-        isRSet = true;
-    }
+    return ice.ace.instance('mainForm:paramR').getValue();
 }
+
+function slideR()
+{
+    let r = getR();
+    document.getElementById('mainForm:sliderR').innerHTML = r;
+    document.getElementById('mainForm:hiddenR').value = r;
+    draw();
+}
+
+function slideY()
+{
+    let y = ice.ace.instance('mainForm:paramY').getValue();
+    document.getElementById('mainForm:sliderY').innerHTML = y;
+    document.getElementById('mainForm:hiddenY').value = y;
+}
+

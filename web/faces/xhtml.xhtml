@@ -11,7 +11,6 @@
 <h:head>
     <title>ЛР3 - Страница проверки</title>
     <h:outputStylesheet library="css" name="css.css"/>
-    <h:outputScript library="js" name="js.js"/>
 </h:head>
 <h:body>
     <header>
@@ -48,18 +47,19 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <ace:sliderEntry id="paramY"
-                                                     value="#{check.paramY}"
-                                                     min="-2"
-                                                     max="2"
-                                                     length="100"
-                                                     stepPercent="25"
+                                    <ace:sliderEntry id="paramY" value="0" min="-2" max="2"
+                                                     showLabels="true" stepPercent="25"
+                                                     onSlideEnd="slideY();"
                                     />
+                                    <h:outputText id="sliderY" value="0"/>
                                     <h:inputHidden value="#{check.paramY}" id="hiddenY" />
                                 </td>
                                 <td>
-                                    <ace:sliderEntry id="rParam" value="#{check.paramR}" min="2" max="5"
-                                                     showLabels="true" stepPercent="8.3333333" onSlide="R=#{check.paramR}; draw();"/>
+                                    <ace:sliderEntry id="paramR" value="2" min="2" max="5"
+                                                     showLabels="true" stepPercent="8.3333333"
+                                                     onSlideEnd="slideR();" />
+                                    <h:outputText id="sliderR" value="2"/>
+                                    <h:inputHidden value="#{check.paramR}" id="hiddenR" />
                                 </td>
                             </tr>
                             <tr>
@@ -69,7 +69,7 @@
                             </tr>
                             <tr>
                                 <td colspan="3">
-                                    <h:inputText id="xParam" value="#{check.paramX}" a:placeholder="Введите число от -5 до 5"
+                                    <h:inputText id="paramX" value="#{check.paramX}" a:placeholder="Введите число от -5 до 5"
                                                  a:maxlength="10" validatorMessage="Выберите значение от -3 до 5">
                                         <f:validateDoubleRange minimum="-5" maximum="5"/>
                                     </h:inputText>
@@ -128,6 +128,7 @@
     </table>
 
     <h:outputLink value="index.xhtml">Вернуться на главную</h:outputLink>
+    <h:outputScript library="js" name="js.js"/>
 
 </h:body>
 </html>

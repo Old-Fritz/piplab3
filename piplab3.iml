@@ -22,7 +22,6 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0" level="application_server_libraries" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - JSF" level="application_server_libraries" />
     <orderEntry type="library" exported="" name="IceFaces-3.1.0" level="project" />
-    <orderEntry type="library" exported="" name="PrimeFaces-6.1" level="project" />
     <orderEntry type="library" name="Mojarra-1.2" level="project" />
     <orderEntry type="library" name="org.projectlombok:lombok:1.16.4" level="project" />
   </component>
