@@ -1,10 +1,15 @@
 package beans;
 
+import lombok.Getter;
+import lombok.Setter;
 import repository.DataRowRepository;
 
 import java.util.Date;
 
+@Setter
+@Getter
 public class DataRow{
+    private int id;
     private double paramX;
     private double paramY;
     private double paramR;
@@ -12,7 +17,8 @@ public class DataRow{
     private Date date;
     private DataRowRepository repository;
 
-    public DataRow(double paramX, double paramY, double paramR, int result, Date date) {
+    public DataRow(int id, double paramX, double paramY, double paramR, int result, Date date) {
+        this.id = id;
         this.paramX = paramX;
         this.paramY = paramY;
         this.paramR = paramR;
@@ -22,6 +28,7 @@ public class DataRow{
 
     public DataRow()
     {
+        this.id = 0;
         this.paramX = 0;
         this.paramY = 0;
         this.paramR = 2;
@@ -39,53 +46,5 @@ public class DataRow{
         date = new Date();
         repository.save(this);
         return "check";
-    }
-
-    public double getParamX() {
-        return paramX;
-    }
-
-    public void setParamX(double paramX) {
-        this.paramX = paramX;
-    }
-
-    public double getParamY() {
-        return paramY;
-    }
-
-    public void setParamY(double paramY) {
-        this.paramY = paramY;
-    }
-
-    public double getParamR() {
-        return paramR;
-    }
-
-    public void setParamR(double paramR) {
-        this.paramR = paramR;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public void setResult(int result) {
-        this.result = result;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public DataRowRepository getRepository() {
-        return repository;
-    }
-
-    public void setRepository(DataRowRepository repository) {
-        this.repository = repository;
     }
 }

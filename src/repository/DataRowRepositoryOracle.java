@@ -11,8 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.sql.*;
 
-@ManagedBean(name = "oracleRepository", eager = true)
-@ApplicationScoped
 public class DataRowRepositoryOracle implements DataRowRepository {
 
     private  Connection connection;
@@ -28,7 +26,7 @@ public class DataRowRepositoryOracle implements DataRowRepository {
         }
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:orbis", "s244703", "");
+                    "jdbc:oracle:thin:@localhost:1521:orbis", "s244703", "czz328");
         } catch (SQLException e) {
             e.printStackTrace();
             return;
@@ -43,13 +41,14 @@ public class DataRowRepositoryOracle implements DataRowRepository {
             ResultSet rs = statement.executeQuery(
                     "select * from checkdata");
             while (rs.next()) {
+                int id = rs.getInt(1);
                 double xParam = rs.getDouble(2);
                 double yParam = rs.getDouble(3);
                 double rParam = rs.getDouble(4);
                 int result = rs.getInt(5);
                 Date date = new Date(rs.getTimestamp(6).getTime());
 
-                DataRow row = new DataRow(xParam,yParam,rParam,result,date);
+                DataRow row = new DataRow(id, xParam,yParam,rParam,result,date);
                 results.add(row);
             }
         }
@@ -66,7 +65,7 @@ public class DataRowRepositoryOracle implements DataRowRepository {
         try {
             PreparedStatement statement = connection.prepareStatement(
                     "insert into checkdata values (NULL, ?, ?, ?, ?, ?)");
-            statement.setDouble(1,check.getParamR());
+            statement.setDouble(1,check.getParamX());
             statement.setDouble(2,check.getParamY());
             statement.setDouble(3,check.getParamR());
             statement.setInt(4,check.getResult());

@@ -70,9 +70,11 @@
                             <tr>
                                 <td colspan="3">
                                     <h:inputText id="paramX" value="#{check.paramX}" a:placeholder="Введите число от -5 до 5"
-                                                 a:maxlength="10" validatorMessage="Выберите значение от -3 до 5">
+                                                 a:maxlength="10" validatorMessage="Выберите значение от -5 до 5">
                                         <f:validateDoubleRange minimum="-5" maximum="5"/>
                                     </h:inputText>
+                                    <br/>
+                                    <h:message id="validatorMessage" for="paramX" style="color:red"/>
                                 </td>
                             </tr>
                             <tr>
@@ -123,12 +125,13 @@
                         </h:outputText>
                     </td>
                 </tr>
+                    <script type="application/javascript">draw();</script>
             </ui:repeat>
         </tbody>
     </table>
 
     <h:outputLink value="index.xhtml">Вернуться на главную</h:outputLink>
-    <h:outputScript library="js" name="js.js"/>
+    <h:outputScript library="js" name="js.js?v=1.5"/>
 
 </h:body>
 </html>

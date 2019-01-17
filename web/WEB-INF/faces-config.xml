@@ -5,6 +5,11 @@
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
 
+    <managed-bean eager="true">
+        <managed-bean-name>oracleRepository</managed-bean-name>
+        <managed-bean-class>repository.DataRowRepositoryOracle</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
 
     <managed-bean>
         <managed-bean-name>check</managed-bean-name>

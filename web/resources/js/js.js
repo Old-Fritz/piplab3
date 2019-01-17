@@ -4,8 +4,13 @@ ice.ace.instance('mainForm:paramR').valueChangeListener = function (event) {
     draw();
 }
 
-draw();
+redraw();
 document.querySelector("canvas").addEventListener('click', clickCanvas, false);
+
+function redraw() {
+    draw();
+    setTimeout(redraw, 100);
+}
 
 function addPoint(x, y, color)
 {
@@ -25,8 +30,16 @@ function draw()
 
 function drawPoints(canvas)
 {
-    for(let i = 0; i<pointsArray.length;i++)
-        drawPoint(canvas,pointsArray[i].xPoint,pointsArray[i].yPoint, pointsArray[i].color);
+    let rows = document.querySelector("#resultTable>tbody").querySelectorAll("tr");
+    for(let i = 0;i<rows.length;i++)
+    {
+        let columns = rows[i].querySelectorAll("td");
+        let x = Number(columns[0].innerText);
+        let y = Number(columns[1].innerText);
+        let result = columns[3].innerText;
+        let color = (result == "Попадание") ? "green" : "red";
+        drawPoint(canvas,x,y, color);
+    }
 }
 
 function drawBackground(canvas) {
