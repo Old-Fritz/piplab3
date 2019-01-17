@@ -28,7 +28,7 @@ public class DataRowRepositoryOracle implements DataRowRepository {
         }
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:orbis", "s245703", "");
+                    "jdbc:oracle:thin:@localhost:1521:orbis", "s244703", "");
         } catch (SQLException e) {
             e.printStackTrace();
             return;
@@ -43,11 +43,11 @@ public class DataRowRepositoryOracle implements DataRowRepository {
             ResultSet rs = statement.executeQuery(
                     "select * from checkdata");
             while (rs.next()) {
-                double xParam = rs.getDouble(1);
-                double yParam = rs.getDouble(2);
-                double rParam = rs.getDouble(3);
-                int result = rs.getInt(4);
-                Date date = rs.getDate(5);
+                double xParam = rs.getDouble(2);
+                double yParam = rs.getDouble(3);
+                double rParam = rs.getDouble(4);
+                int result = rs.getInt(5);
+                Date date = new Date(rs.getTimestamp(6).getTime());
 
                 DataRow row = new DataRow(xParam,yParam,rParam,result,date);
                 results.add(row);

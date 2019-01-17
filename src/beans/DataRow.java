@@ -24,7 +24,7 @@ public class DataRow{
     {
         this.paramX = 0;
         this.paramY = 0;
-        this.paramR = 1;
+        this.paramR = 2;
         this.result = 0;
         this.date = null;
     }
