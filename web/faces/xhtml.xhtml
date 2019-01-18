@@ -10,7 +10,7 @@
 
 <h:head>
     <title>ЛР3 - Страница проверки</title>
-    <h:outputStylesheet library="css" name="css.css"/>
+    <h:outputStylesheet library="css" name="css.css?v=8"/>
 </h:head>
 <h:body>
     <header>
@@ -47,17 +47,17 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <ace:sliderEntry id="paramY" value="0" min="-2" max="2"
+                                    <ace:sliderEntry length="80%" id="paramY" value="0" min="-2" max="2"
                                                      showLabels="true" stepPercent="25"
                                                      onSlideEnd="slideY();"
                                     />
-                                    <h:outputText id="sliderY" value="0"/>
+                                    <h:outputText axis="y" id="sliderY" value="0"/>
                                     <h:inputHidden value="#{check.paramY}" id="hiddenY" />
                                 </td>
-                                <td>
-                                    <ace:sliderEntry id="paramR" value="2" min="2" max="5"
+                                <td align="center">
+                                    <ace:sliderEntry length="80%" id="paramR" value="2" min="2" max="5"
                                                      showLabels="true" stepPercent="8.3333333"
-                                                     onSlideEnd="slideR();" />
+                                                     onSlide="slideR();" />
                                     <h:outputText id="sliderR" value="2"/>
                                     <h:inputHidden value="#{check.paramR}" id="hiddenR" />
                                 </td>

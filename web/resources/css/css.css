@@ -60,3 +60,30 @@ fieldset>table{
     width: 80%;
     padding: 1% 1% 1% 1%;
 }
+
+.ice-ace-slider-label-right {
+    margin-left: 5%;
+    width: 5%;
+}
+
+.ice-ace-slider-label-left {
+    margin-right: 5%;
+    width: 5%;
+}
+
+
+.ui-sliderentry {
+    margin-left: 10%;
+    width: 80%;
+    margin-right: 10%;
+}
+
+.ui-slider-horizontal {
+    height: .8em;
+    width: 70%;
+}
+
+#clock {
+    text-align: center;
+    font-size: 4000cm;
+}
