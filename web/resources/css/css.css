@@ -71,10 +71,6 @@ fieldset>table{
     width: 5%;
 }
 
-.ui-slider-horizontal {
-    height: .8em;
-    width: 70%;
-}
 
 .ui-sliderentry {
     margin-left: 10%;
@@ -82,3 +78,12 @@ fieldset>table{
     margin-right: 10%;
 }
 
+.ui-slider-horizontal {
+    height: .8em;
+    width: 70%;
+}
+
+#clock {
+    text-align: center;
+    font-size: 4000cm;
+}

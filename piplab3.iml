@@ -24,5 +24,6 @@
     <orderEntry type="library" exported="" name="IceFaces-3.1.0" level="project" />
     <orderEntry type="library" name="Mojarra-1.2" level="project" />
     <orderEntry type="library" name="org.projectlombok:lombok:1.16.4" level="project" />
+    <orderEntry type="library" name="javax.faces:javax.faces-api:2.3" level="project" />
   </component>
 </module>
