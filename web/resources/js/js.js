@@ -1,5 +1,3 @@
-var pointsArray = [];
-
 ice.ace.instance('mainForm:paramR').valueChangeListener = function (event) {
     draw();
 }
@@ -10,11 +8,6 @@ document.querySelector("canvas").addEventListener('click', clickCanvas, false);
 function redraw() {
     draw();
     setTimeout(redraw, 100);
-}
-
-function addPoint(x, y, color)
-{
-    pointsArray.push({xPoint:x,yPoint:y, color:color});
 }
 
 function draw()
@@ -67,13 +60,14 @@ function drawFigure(canvas, r) {
 
     let rPixels = canvas.width/12;
 
-    context.fillRect(canvas.width/2, (6-r)*rPixels,rPixels*r,rPixels*r);
-    context.arc(canvas.width/2,canvas.height/2,r*rPixels/2,0,Math.PI/2);
+
+    context.fillRect(canvas.width/2, (6-r/2)*rPixels,rPixels*r,rPixels*r/2);
+    context.arc(canvas.width/2,canvas.height/2,r*rPixels,Math.PI/2, Math.PI);
     context.lineTo(canvas.width/2,canvas.height/2);
     context.fill();
     context.moveTo(canvas.width/2,canvas.height/2);
-    context.lineTo(canvas.width/2-rPixels*r, canvas.height/2);
-    context.lineTo(canvas.width/2, canvas.height/2+rPixels*r);
+    context.lineTo(canvas.width/2+rPixels*r/2, canvas.height/2);
+    context.lineTo(canvas.width/2, canvas.height/2+rPixels*r/2);
     context.fill();
 }
 
