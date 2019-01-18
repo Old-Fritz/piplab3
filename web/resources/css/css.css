@@ -85,5 +85,10 @@ fieldset>table{
 
 #clock {
     text-align: center;
-    font-size: 4000cm;
+    font-size: 10vw;
+}
+
+.apply-button{
+    width: 83%;
+    height: 5em;
 }
